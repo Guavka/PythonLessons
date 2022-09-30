@@ -1,23 +1,25 @@
-from modules.coffee_machine_new import get_coffee_order
+from modules.coffee_machine_rework import get_coffee_order
+from utils import print_data
 
 if __name__ == '__main__':
+
     drink_dict = {
         'кофе': {
-            '200': 100,
-            '300': 150,
-            '400': 200
+            200: 100,
+            300: 150,
+            350: 200
         },
         'чай': {
-            '150': 80,
-            '200': 100
+            300: 100,
+            400: 120
         },
         'латте': {
-            '350': 170,
-            '400': 220
+            200: 120,
+            300: 170,
+            400: 220
         },
-        'капучино': {
-            '300': 200,
-            '350': 250
+        'эспрессо': {
+            150: 100,
         },
     }
 
@@ -25,8 +27,10 @@ if __name__ == '__main__':
         'лимон': 5,
         'молоко': 20,
         'корица': 10,
-        'ничего': 0
     }
 
-    order = get_coffee_order(add_dict=add_dict, drink_dict=drink_dict)
-    print(order)
+    order = get_coffee_order(drink_dict=drink_dict, 
+                             add_dict=add_dict,
+                             input_fn=input,
+                             output_fn=print_data)
+    print_data(order)
