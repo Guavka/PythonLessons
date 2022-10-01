@@ -1,6 +1,6 @@
 
 from typing import Dict
-from models.phone import Phone,PhoneSettings
+from models.phone import Phone, PhoneSettings
 
 from utils.validator import isValidName
 
@@ -85,6 +85,16 @@ class Contact:
 
         self.__numbers[number.name] = number
 
-    def remove_number(self,number:Phone):
+    def remove_number(self, number: Phone):
         assert isinstance(number, Phone), 'Неверный формат номера'
         self.__numbers[number.name] = None
+
+    def __init__(self, first_name: str, second_name: str = None, last_name: str = None, numbers: Dict[str, Phone] = None) -> None:
+        self.first_name = first_name
+        
+        if not second_name is None:
+            self.second_name = second_name
+        if not last_name is None:
+            self.last_name = last_name
+        if not last_name is None:
+            self.numbers = numbers
