@@ -1,6 +1,6 @@
 from typing import Dict
 
-from phone_book.models.contact import Contact
+from models.contact import Contact
 
 
 class PhoneBook:
