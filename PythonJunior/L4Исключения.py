@@ -15,8 +15,6 @@ number2 = None
 
 try:
     print(number1 / number2)
-except ZeroDivisionError:
-    print('Ты поделил на 0, а так нельзя!')
 except Exception as ex:
     print(ex)
 
