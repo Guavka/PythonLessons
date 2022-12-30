@@ -40,6 +40,38 @@ def get_range_sum(left_edge, right_edge):
 
 result = get_range_sum(1, 5) + get_range_sum(3, 8)
 
+# Анонимные функции
+
+'''
+result = lambda параметры: тело_функции
+'''
+
+
+def sqr(number):
+    return number**2
+
+
+result = sqr(15)
+print(result)
+result = (lambda number: number**2)(15)
+print(result)
+
+
+def power(number, power):
+    return number**power
+
+
+result = power(15, 2)
+print(result)
+result = (lambda number, power: number**power)(15,2)
+print(result)
+
+result = sqr(15)
+print(result)
+result = (lambda i: i**2)(15)
+print(result)
+
+
 # Добавляем аннотации
 
 
@@ -50,6 +82,7 @@ def get_range_sum(left_edge: int, right_edge: int):
     return result
 
 # Добавляем описание
+
 
 def print_range_sum(left_edge: int, right_edge: int):
     """
