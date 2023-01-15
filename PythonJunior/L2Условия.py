@@ -1,6 +1,6 @@
 # Условия
-a = 5
-b = 2
+number1 = 5
+number2 = 2
 
 '''
 Операторы условия - знаки, которые можно исмпользовать при сравнении
@@ -17,8 +17,8 @@ b = 2
 if условие:
     дейcтвия_если_условие_выполняется
 '''
-if a > b:
-    print('a > b')
+if number1 > number2:
+    print('number1 > number2')
 
 '''
 Обычный if
@@ -27,10 +27,10 @@ if условие:
 else:
     дейcтвия_если_условие_не_выполняется
 '''
-if a > b:
-    print('a > b')
+if number1 > number2:
+    print('number1 > number2')
 else:
-    print('a <= b')
+    print('number1 <= number2')
 
 '''
 Каскадный if (версия 1)
@@ -43,17 +43,17 @@ else:
         дейcтвия_если_условие2_не_выполняется
 '''
 
-оценка = 1
-if оценка == 5:
+mark = 1
+if mark == 5:
     print('Отличник')
 else:
-    if оценка == 4:
+    if mark == 4:
         print('Хорошист')
     else:
-        if оценка == 3:
+        if mark == 3:
             print('Троечник')
         else:
-            if оценка == 2:
+            if mark == 2:
                 print('Двоечник')
             else:
                 print('Это кол!')
@@ -68,31 +68,31 @@ else:
     дейcтвия_если_условие_не_выполняется
 '''
 
-оценка = 1
-if оценка == 5:
+mark = 1
+if mark == 5:
     print('Отличник')
-elif оценка == 4:
+elif mark == 4:
     print('Хорошист')
-elif оценка == 3:
+elif mark == 3:
     print('Троечник')
-elif оценка == 2:
+elif mark == 2:
     print('Двоечник')
 else:
     print('Это кол!')
 
-if a > b:
-    print('a > b')
-elif a < b:
-    print('a < b')
+if number1 > number2:
+    print('number1 > number2')
+elif number1 < number2:
+    print('number1 < number2')
 else:
-    print('a = b')
+    print('number1 = number2')
 
 '''
 Результат условия в переменной
 переменная = условие
 '''
 
-condition = a > b  # True
+condition = number1 > number2  # True
 
 
 '''
@@ -100,11 +100,11 @@ condition = a > b  # True
 переменная = значение_если_условие_выполняется if условие else значение_если_условие_не_выполняется
 '''
 
-result = 'a > b' if a > b else 'a <= b'
+result = 'number1 > number2' if number1 > number2 else 'number1 <= number2'
 print(result)
 
 
-result = ('a > b') if (a > b) else ('a < b' if a < b else 'a = b')
+result = 'number1 > number2' if number1 > number2 else 'number1 < number2' if number1 < number2 else 'number1 = number2'
 
 
 '''
@@ -168,25 +168,25 @@ print(фраза_мамы)
 # Задача - ввести число от 1 до 120 и определить ребенок, подросток, взрослый или пожилой человек
 
 '''
-возраст = 500
-if возраст < 14:
+age = 500
+if age < 14:
     print('Ребенок')
-elif возраст < 21:
+elif age < 21:
     print('Подросток')
-elif возраст < 60:
+elif age < 60:
     print('Взрослый')
 else:
     print('Пожилой')
 '''
 
-'''
-возраст = 500
-if 0 < возраст <= 120: # возраст > 0 and возраст <= 120
-    if возраст < 14:
+'''  
+age = 500
+if 0 < age <= 120: # возраст > 0 and возраст <= 120
+    if age < 14:
         print('Ребенок')
-    elif возраст < 21:
+    elif age < 21:
         print('Подросток')
-    elif возраст < 60:
+    elif age < 60:
         print('Взрослый')
     else:
         print('Пожилой')
@@ -194,56 +194,60 @@ else:
     print('Введите число от 1 до 120')
 '''
 
-'''
-возраст = 500
-if not (0 < возраст <= 120):
+''' 
+age = 500
+if not (0 < age <= 120): # age <= 0 or age > 120
     print('Введите число от 1 до 120')    
 else:
-    if возраст < 14:
+    if age < 14:
         print('Ребенок')
-    elif возраст < 21:
+    elif age < 21:
         print('Подросток')
-    elif возраст < 60:
+    elif age < 60:
         print('Взрослый')
     else:
         print('Пожилой')
 '''
 
-'''
-возраст = 500
-if not (0 < возраст <= 120):
-    сообщение = 'Введите число от 1 до 120'   
+''' 
+age = 500
+if not (0 < age <= 120):
+    message = 'Введите число от 1 до 120'   
 else:
-    if возраст < 14:
-        сообщение = 'Ребенок'
-    elif возраст < 21:
-        сообщение = 'Подросток'
-    elif возраст < 60:
-        сообщение = 'Взрослый'
+    if age < 14:
+        message = 'Ребенок'
+    elif age < 21:
+        message = 'Подросток'
+    elif age < 60:
+        message = 'Взрослый'
     else:
-        сообщение = 'Пожилой'
-print(сообщение)
+        message = 'Пожилой'
+    
+    #message =  'Ребенок' if age < 14 else 'Подросток' if age < 21 else 'Взрослый' if age < 60 else 'Пожилой'
+    
+print(message)
 '''
 
 
-мин_возраст = 1
-макс_возраст = 120
+min_age = 1
+max_age = 120
 
-граница_ребенок = 14
-граница_подросток = 21
-граница_взрослый = 65
+edge_child = 14
+edge_teen = 21
+edge_adult = 65
 
-возраст = 60
+age = 60
 
-if not (мин_возраст <= возраст <= макс_возраст):
-    сообщение = f'Введите число от {мин_возраст} до {макс_возраст}' # Введите число от 1 до 120
+if not (min_age <= age <= max_age):
+    # Введите число от 1 до 120
+    message = f'Введите число от {min_age} до {max_age}'
 else:
-    if возраст < граница_ребенок:
-        сообщение = 'Ребенок'
-    elif возраст < граница_подросток:
-        сообщение = 'Подросток'
-    elif возраст < граница_взрослый:
-        сообщение = 'Взрослый'
+    if age < edge_child:
+        message = 'Ребенок'
+    elif age < edge_teen:
+        message = 'Подросток'
+    elif age < edge_adult:
+        message = 'Взрослый'
     else:
-        сообщение = 'Пожилой'
-print(сообщение)
+        message = 'Пожилой'
+print(message)
