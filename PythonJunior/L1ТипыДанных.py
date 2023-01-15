@@ -4,31 +4,28 @@ int - целые числа (1,5,-5)
 float - вещественные числа (1.5,-3.14)
 str - строки 'Привет'
 bool - True/False
-
-list - списки - коллекции, в которые можно помещать данные
-dict - словари - списки у которых есть уникальный ключ
+None - несосуществование
 '''
-a = 15
-a = 'sadfasd'
+number1 = 15
+number1 = 'sadfasd'
 
-print(a)
+print(number1)
 
 # Математические операции
-a = 2
-b = 4
-c = a + b  # сумма
-print(c)
-c = a - b  # разница
-print(c)
-c = a * b  # умножение
-print(c)
-c = a ** b  # степень
-print(c)
-c = a / b  # деление
-print(c)
-c = a // b  # целая часть от деления
-print(c)
-c = a % b  # остаток от деления
-print(c)
-
+number1 = 2
+number2 = 4
+result = number1 + number2  # сумма
+print(result)
+result = number1 - number2  # разница
+print(result)
+result = number1 * number2  # умножение
+print(result)
+result = number1 ** number2  # степень
+print(result)
+result = number1 / number2  # деление
+print(result)
+result = number1 // number2  # целая часть от деления
+print(result)
+result = number1 % number2  # остаток от деления
+print(result)
 
