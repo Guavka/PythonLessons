@@ -19,6 +19,8 @@ if условие:
 '''
 if number1 > number2:
     print('number1 > number2')
+    print('number1 > number2')
+print('Привет!')
 
 '''
 Обычный if
@@ -92,7 +94,7 @@ else:
 переменная = условие
 '''
 
-condition = number1 > number2  # True
+is_great = number1 > number2  # True
 
 
 '''
@@ -100,10 +102,21 @@ condition = number1 > number2  # True
 переменная = значение_если_условие_выполняется if условие else значение_если_условие_не_выполняется
 '''
 
+if number1 > number2:
+    print('number1 > number2')
+else:
+    print('number1 <= number2')
+
 result = 'number1 > number2' if number1 > number2 else 'number1 <= number2'
 print(result)
 
 
+if number1 > number2:
+    print('number1 > number2')
+elif number1 < number2:
+    print('number1 < number2')
+else:
+    print('number1 = number2')
 result = 'number1 > number2' if number1 > number2 else 'number1 < number2' if number1 < number2 else 'number1 = number2'
 
 
@@ -154,21 +167,30 @@ else:
 
 могу_гулять = сделал_уроки and (помыл_посуду or помыл_полы)
 if могу_гулять:
-    фраза_мамы = 'Иди гуляй'
+    сообщение = 'Иди гуляй'
 else:
-    фраза_мамы = 'Ты не сделал все домашние дела'
-print(фраза_мамы)
+    сообщение = 'Ты не сделал все домашние дела'
+print(сообщение)
 
 # Делаем условие инлайновым(ТОЛЬКО ДЛЯ ПРОСТЫХ ДЕЙСТВИЙ)
+
+'''
+Было
+if сделал_уроки and (помыл_посуду or помыл_полы):
+    print('Иди гуляй')
+else:
+    print('Ты не сделал все домашние дела')
+'''
+
 могу_гулять = сделал_уроки and (помыл_посуду or помыл_полы)
-фраза_мамы = 'Иди гуляй' if могу_гулять else 'Ты не сделал все домашние дела'
-print(фраза_мамы)
+сообщение = 'Иди гуляй' if могу_гулять else 'Ты не сделал все домашние дела'
+print(сообщение)
 
 # Простое приложение для закрепления условий
 # Задача - ввести число от 1 до 120 и определить ребенок, подросток, взрослый или пожилой человек
 
-'''
-age = 500
+''' 
+age = 50
 if age < 14:
     print('Ребенок')
 elif age < 21:
@@ -179,7 +201,7 @@ else:
     print('Пожилой')
 '''
 
-'''  
+''' 
 age = 500
 if 0 < age <= 120: # возраст > 0 and возраст <= 120
     if age < 14:
@@ -209,10 +231,10 @@ else:
         print('Пожилой')
 '''
 
-''' 
+'''
 age = 500
 if not (0 < age <= 120):
-    message = 'Введите число от 1 до 120'   
+    message = 'Введите число от 1 до 120'
 else:
     if age < 14:
         message = 'Ребенок'
@@ -222,32 +244,75 @@ else:
         message = 'Взрослый'
     else:
         message = 'Пожилой'
-    
+
     #message =  'Ребенок' if age < 14 else 'Подросток' if age < 21 else 'Взрослый' if age < 60 else 'Пожилой'
-    
+
 print(message)
 '''
 
-
+'''
 min_age = 1
-max_age = 120
+max_age = 150
 
-edge_child = 14
-edge_teen = 21
-edge_adult = 65
+name_child = 'Ребенок'
+edge_child = 16
 
-age = 60
+name_teen = 'Подросток'
+edge_teen = 25
+
+name_adult = 'Взрослый'
+edge_adult = 75
+
+name_old = 'Пожилой'
+
+err_message = 'Введите число в диапазоне'
+
+age = 600
 
 if not (min_age <= age <= max_age):
     # Введите число от 1 до 120
-    message = f'Введите число от {min_age} до {max_age}'
+    message = f'{err_message} [{min_age}, {max_age}]'
 else:
     if age < edge_child:
-        message = 'Ребенок'
+        message = name_child
     elif age < edge_teen:
-        message = 'Подросток'
+        message = name_teen
     elif age < edge_adult:
-        message = 'Взрослый'
+        message = name_adult
     else:
-        message = 'Пожилой'
+        message = name_old
+print(message)
+'''
+
+min_age = 1
+max_age = 150
+
+name_child = 'Ребенок'
+edge_child = 16
+
+name_teen = 'Подросток'
+edge_teen = 25
+
+name_adult = 'Взрослый'
+edge_adult = 75
+
+name_old = 'Пожилой'
+
+err_message = 'Введите число в диапазоне'
+
+age = input(f'{err_message} [{min_age}, {max_age}]: ') # 5 -> '5' 
+age = int(age) # int('5') -> 5
+
+if not (min_age <= age <= max_age):
+    # Введите число от 1 до 120
+    message = f'{err_message} [{min_age}, {max_age}]'
+else:
+    if age < edge_child:
+        message = name_child
+    elif age < edge_teen:
+        message = name_teen
+    elif age < edge_adult:
+        message = name_adult
+    else:
+        message = name_old
 print(message)
