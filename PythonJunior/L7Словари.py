@@ -21,6 +21,13 @@ user_dict = {
         'password': 124
     },
 }
+
+user_dict2 = {
+    'User1': 123,
+    'User2': 125,
+    'User3': 124,
+}
+
 print(user_dict['User3']['login'])  # User3
 
 
@@ -63,6 +70,23 @@ phone_book_dict = {
 
 print(phone_book_dict['Contact3']['numbers']['Work3'])  # 866
 
+phone_book_dict = {
+    'Contact1': {
+        'Work': 12345
+    },
+    'Contact2': {
+        'Work': 12345,
+        'Work2': 12345
+    },
+    'Contact3': {
+        'Work': 12345,
+        'Work2': 12345,
+        'Work3': 866
+    },
+}
+
+print(phone_book_dict['Contact3']['Work3'])  # 866
+
 username_list = [['User1', 15], ['User2', 18]]
 username_dict = {
     'User1': 15,
@@ -79,9 +103,10 @@ for user in username_dict:
         print(user)
 
 # Добавить пользователя в базу
-# list
 login = 'User2'
 age = 14
+
+# list
 for user in username_list:
     if user[0] == login:
         print('Логин занят')
@@ -113,4 +138,6 @@ print(number_set1.union(number_set2))  # {1, 2, 3, 4, 5, 6, 7}
 friend_set = {'Андрей', 'Миша', 'Альбина'}
 friend_set2 = {'Алексей', 'Маша', 'Альбина'}
 
-print(friend_set.intersection(friend_set2))  # Альбина
+print(friend_set.intersection(friend_set2))  # {'Альбина'}
+print(friend_set.union(friend_set2))  # {'Андрей', 'Миша', 'Альбина', 'Алексей', 'Маша'}
+print(friend_set.difference(friend_set2))  # {'Андрей', 'Миша'}
