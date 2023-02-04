@@ -1,6 +1,5 @@
 # списки - коллекции, в которых данные находятся неупорядоченно, согласно некой логике
 
-import copy
 temp = ['Alex', 18, True]  # нет смысла просто мусорник из данных
 
 users_list = ['Alex', 'Guavka', 'Den']  # логичный список
@@ -223,7 +222,8 @@ phone_book = [
     ],
 ]
 
-phone_book2 = copy.deepcopy(phone_book)
+from copy import deepcopy
+phone_book2 = deepcopy(phone_book)
 
 print(f'phone_book = {phone_book}')
 print(f'phone_book2 = {phone_book2}')
@@ -233,7 +233,7 @@ phone_book2[0][2][0][0] = 'Дом'
 print(f'phone_book = {phone_book}')
 print(f'phone_book2 = {phone_book2}')
 
-# Срезы - особый механизм, позваоляющий получать копию коллекции или ее участка
+# Срезы - особый механизм, позволяющий получать копию коллекции или ее участка
 print('-----------------Срезы')
 numbers = [1, 2, 5, 7, 9, 0]
 numbers.remove(numbers[numbers.index(1)])
