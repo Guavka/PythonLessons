@@ -30,7 +30,7 @@ for user in users_list:
     print(f'Username: {user}')
 
 print('-------------print by index')
-for i in range(len(users_list) - 1):
+for i in range(len(users_list)):
     print(f'Username: {users_list[i]}')
 
 drinks = ['Кофе', 'Капучино', 'Чай']
@@ -53,6 +53,9 @@ drinks.append('Молоко')  # добавляем элемент в конец
 print(drinks)
 
 drinks.insert(1, 'Какао')  # добавляет элемент по нужному индексу
+print(drinks)
+
+drinks.insert(1, 'Молоко')  # добавляет элемент по нужному индексу
 print(drinks)
 
 milk_index = drinks.index('Молоко')  # возвращает индекс молока
