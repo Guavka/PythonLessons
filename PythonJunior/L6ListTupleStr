@@ -1,6 +1,6 @@
 # списки - коллекции, в которых данные находятся неупорядоченно, согласно некой логике
 
-temp = ['Alex', 18, True]  # нет смысла просто мусорник из данных
+temp = ['Alex', 18, True]  # нет смысла, просто мусорник из данных
 
 users_list = ['Alex', 'Guavka', 'Den']  # логичный список
 
@@ -236,10 +236,13 @@ print(f'phone_book2 = {phone_book2}')
 # Срезы - особый механизм, позволяющий получать копию коллекции или ее участка
 print('-----------------Срезы')
 numbers = [1, 2, 5, 7, 9, 0]
-numbers.remove(numbers[numbers.index(1)])
+numbers2 = numbers.copy()
+numbers2.remove(numbers[0])
 print(numbers)
+print(numbers2)
 
 numbers = [1, 2, 5, 7, 9, 0]
+numbers2 = numbers[0:len(numbers)-1:1]
 numbers2 = numbers[::]  # [1, 2, 5, 7, 9, 0]
 print(numbers2)
 numbers2 = numbers[1::]  # [2, 5, 7, 9, 0]
@@ -248,25 +251,6 @@ numbers2 = numbers[:4:]  # [1, 2, 5, 7]
 print(numbers2)
 numbers2 = numbers[::2]  # [1, 5, 9]
 print(numbers2)
-
-# Строки - частный случай списков
-print('---------------Строки')
-string = 'Hello'
-string_list = ['H', 'e', 'l', 'l', 'o']
-
-for s in string:
-    print(s)
-
-drinks = ['кофе', 'чАй', 'ЛиМоНаД']
-for drink in drinks:
-    print(drink.lower().capitalize())
-
-word = 'Hello'
-word = word.replace('l', 'X')
-print(word)
-
-word = 'Hello'
-print(word[:len(word)-1:])
 
 
 # Tuple - кортежи - списки, у которых нельзя поменять данные
@@ -284,6 +268,25 @@ user_tuple = (
 print(user_tuple)
 #user_tuple[1][0] = 'Den'
 # print(user_tuple)
+
+# Строки - частный случай кортежей
+print('---------------Строки')
+string = 'Hello'
+string_list = ['H', 'e', 'l', 'l', 'o']
+
+for s in string:
+    print(s)
+
+drinks = ['кофе', 'чАй', 'ЛиМоНаД']
+for drink in drinks:
+    print(drink.lower().capitalize())
+
+word = 'Hello'
+word = word.replace('l', 'X')
+print(word)
+
+word = 'Hello'
+print(word[:len(word)-1:])
 
 # Кофемашина
 print('-------------------Кофемашина ')
