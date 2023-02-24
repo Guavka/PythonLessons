@@ -1,46 +1,52 @@
-drink1_name = 'Coffee'
-
-drink1_volume1 = '350ml'
-drink1_volume1_price = 300
-
-drink1_volume2 = '400ml'
-drink1_volume2_price = 400
-
-drink2_name = 'Tea'
-
-drink2_volume1 = '400ml'
-drink2_volume1_price = 400
+# Шаг 2. Переходим на словари
+menu_dict = {
+    'coffee': {
+        '350ml': 300,
+        '400ml': 400
+    },
+    'tea': {
+        '400ml': 300,
+        '340ml': 250
+    }
+}
 
 while True:
-    print('Welcome!')
-    user_choose = input(f'1.{drink1_name}\n2.{drink2_name}\n3.Exit\n')
+    menu_list = list(menu_dict.keys())
 
-    if user_choose == '1':
-        print(f'You choose {drink1_name}:\n\
-1.{drink1_volume1}: {drink1_volume1_price}\n\
-2.{drink1_volume2}: {drink1_volume2_price}\n\
-3.Exit')        
-        user_choose = input('Input menu item index: ')
-        
-        if user_choose == '1':
-            print(f'{drink1_name} {drink1_volume1} {drink1_volume1_price}')
-        elif user_choose == '2':
-            print(f'{drink1_name} {drink1_volume2} {drink1_volume2_price}')
-        elif user_choose == '3':
-            break
-        else:
-            print('Error menu item!')        
-    elif user_choose == '2':
-        print(f'You choose {drink2_name}:\n\
-1.{drink2_volume1}: {drink2_volume1_price}\n\
-2.Exit')     
-        if user_choose == '1':
-            print(f'{drink2_name} {drink2_volume1} {drink2_volume1_price}')
-        elif user_choose == '2':
-            break
-        else:
-            print('Error menu item!')
-    elif user_choose == '3':
-        break
+    for i in range(len(menu_list)):
+        print(f'{i+1}.{menu_list[i].capitalize()}')
+    print(f'{i+2}.Exit')
+
+    user_choose = input('Input menu index: ')
+    user_choose = int(user_choose)
+
+    exit_index = len(menu_list)+1
+    if user_choose not in range(1, exit_index+1):
+        print(f'Index must be in range [1, {exit_index}]')
     else:
-        print('Error menu item!')
+        if user_choose == exit_index:
+            break
+
+        drink_name = menu_list[user_choose-1]
+        size_dict = menu_dict[drink_name]
+
+        size_list = list(size_dict.keys())
+
+        for i in range(len(size_list)):
+            print(f'{i+1}.{size_list[i].capitalize()}')
+        print(f'{i+2}.Exit')
+
+        user_choose = input('Input menu index: ')
+        user_choose = int(user_choose)
+
+        exit_index = len(size_list)+1
+        if user_choose not in range(1, exit_index+1):
+            print(f'Index must be in range [1, {exit_index}]')
+        else:
+            if user_choose == exit_index:
+                break
+
+            drink_size = size_list[user_choose-1]
+            price = size_dict[drink_size]
+
+            print(drink_name, drink_size, price)
